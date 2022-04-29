@@ -1,0 +1,26 @@
+security:
+  oauth2:
+    client:
+      clientId: account-service
+      clientSecret: config
+      accessTokenUri: http://127.0.0.1:5000/uaa/oauth/token
+      grant-type: client_credentials
+      scope: server
+
+spring:
+  data:
+    mongodb:
+      host: 127.0.0.1
+      username: mongo
+      password: mongo
+      database: accounts
+      port: 27017
+
+server:
+  servlet:
+    context-path: /accounts
+  port: 6000
+
+feign:
+  hystrix:
+    enabled: true
